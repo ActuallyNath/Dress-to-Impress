@@ -1,0 +1,39 @@
+body
+{
+	background-color: #d7d8e7;
+	margin: 0;
+}
+
+@font-face
+{
+	font-family: TextFont;
+	src: url(../mmfiles/text.ttf);
+}
+
+#title
+{
+	font-family: TextFont;
+	font-size: 5vw;
+	text-align: center;
+}
+
+#text
+{
+	font-family: TextFont;
+	font-size: 2.5vw;
+	text-align: center;
+}
+
+#home
+{
+	float: right;
+	padding-right: 2vw;
+	font-family: TextFont;
+	font-size: 2vw;
+	color: #262629;
+}
+
+a
+{
+	text-decoration: none;
+}

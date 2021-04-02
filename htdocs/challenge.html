@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="">
+		<meta name="keywords" content="HTML, CSS, JavaScript">
+		<meta name="author" content="Nathalia Canlas">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" href="" type="image/gif">
+		<link rel="stylesheet" type="text/css" href="../css/challenge.css">
+		
+		<title>
+			Challenge
+		</title>
+	</head>
+	
+	<body>
+		<div class="frames">
+			<img id="mirror" src="../images/mirror.png">
+			<img id="model" src="../images/model.png">
+			<img id="frame" src="../images/frame.png">
+			<img id="frame1" src="../images/frame2.png">
+			<img id="frame2" src="../images/frame.png">
+			<img id="frame3" src="../images/frame3.png">
+			<img id="shelf" src="../images/shelf.png">
+		</div>
+		
+		<div class="parts">
+			<div class="hair">
+				<button id="h1" class="h" onclick="check_hair(1)"><img class="hair" src="../images/girl 1/h.png"></button>
+				<button id="h2" class="h" onclick="check_hair(2)"><img class="hair" src="../images/girl 2/h.png"></button>
+				<button id="h3" class="h" onclick="check_hair(3)"><img class="hair" src="../images/girl 3/h.png"></button>
+				<button id="h4" class="h" onclick="check_hair(4)"><img class="hair" src="../images/girl 4/h.png"></button>
+			</div>
+		
+			<div class="eyes">
+				<button id="e1" class="e" onclick="check_eyes(1)"><img class="eyes" src="../images/girl 1/e.png"></button>
+				<button id="e2" class="e" onclick="check_eyes(2)"><img class="eyes" src="../images/girl 2/e.png"></button>
+				<button id="e3" class="e" onclick="check_eyes(3)"><img class="eyes" src="../images/girl 3/e.png"></button>
+				<button id="e4" class="e" onclick="check_eyes(4)"><img class="eyes" src="../images/girl 4/e.png"></button>
+			</div>
+		
+			<div class="top">
+				<button id="t1" class="t" onclick="check_top(1)"><img class="top" src="../images/girl 1/t.png"></button>
+				<button id="t2" class="t" onclick="check_top(2)"><img class="top" src="../images/girl 2/t.png"></button>
+				<button id="t3" class="t" onclick="check_top(3)"><img class="top" src="../images/girl 3/t.png"></button>
+				<button id="t4" class="t" onclick="check_top(4)"><img class="top" src="../images/girl 4/t.png"></button>
+			</div>
+		
+			<div class="pants">
+				<button id="p1" class="p" onclick="check_pants(1)"><img class="pants" src="../images/girl 1/p.png"></button>
+				<button id="p2" class="p" onclick="check_pants(2)"><img class="pants" src="../images/girl 2/p.png"></button>
+				<button id="p3" class="p" onclick="check_pants(3)"><img class="pants" src="../images/girl 3/p.png"></button>
+				<button id="p4" class="p" onclick="check_pants(4)"><img class="pants" src="../images/girl 4/p.png"></button>
+			</div>
+		
+		
+			<div class="shoes">
+				<button id="s1" class="s" onclick="check_shoes(1)"><img class="shoes" src="../images/girl 1/s.png"></button>
+				<button id="s2" class="s" onclick="check_shoes(2)"><img class="shoes" src="../images/girl 2/s.png"></button>
+				<button id="s3" class="s" onclick="check_shoes(3)"><img class="shoes" src="../images/girl 3/s.png"></button>
+				<button id="s4" class="s" onclick="check_shoes(4)"><img class="shoes" src="../images/girl 4/s.png"></button>
+			</div>
+		</div>
+		
+		
+		<script>
+			var model = document.getElementById("model").innerHTML;
+            var combination = Math.floor(Math.random()*4)+1;
+            var score = 0;
+
+            var ch = 0;
+            var ce = 0;
+            var ct = 0;
+            var cp = 0;
+            var cs = 0;
+      
+            var fin = 0;
+
+            switch (combination){
+            case 1: 
+                document.getElementById("model").src = "../images/combination1.png";
+                break;
+            case 2: 
+                document.getElementById("model").src = "../images/combination2.png";
+                break;
+            case 3: 
+                document.getElementById("model").src = "../images/combination3.png";
+                break;
+            case 4: 
+                document.getElementById("model").src = "../images/combination4.png";
+                break;
+            }
+			
+			function check_win() {
+				if(fin==5){
+				score = (ch + ce + ct + cp + cs)*10;
+				alert("your score is " + score);
+				}
+			}
+			
+            function check_hair(x) {
+                if(x == combination){
+                    ch = 2;
+					}
+					fin++;
+                var buttons = document.getElementsByClassName("h");
+                
+                for (var i =0;i < buttons.length; i++){
+                  if(i != x-1)
+                  buttons[i].style.opacity =  ( buttons[i].style.opacity ==  "0" ? "1" : "0");
+				}
+				check_win();
+            }
+
+            function check_eyes(x) {
+                if(x == combination){
+                    ce = 2;
+					}
+					fin++;
+                var buttons = document.getElementsByClassName("e");
+                
+                for (var i =0;i < buttons.length; i++){
+                  if(i != x-1)
+                  buttons[i].style.opacity =  ( buttons[i].style.opacity ==  "0" ? "1" : "0");
+				}
+				check_win();
+            }
+
+            function check_top(x) {
+                if (x == combination){
+                    ct = 2;
+					}
+					fin++;
+                var buttons = document.getElementsByClassName("t");
+                
+                for (var i =0;i < buttons.length; i++){
+                  if(i != x-1)
+                  buttons[i].style.opacity =  ( buttons[i].style.opacity ==  "0" ? "1" : "0");
+				}
+				check_win();
+            }
+			
+			function check_pants(x) {
+                if (x == combination){
+                    cp = 2;
+					}
+					fin++;
+                var buttons = document.getElementsByClassName("p");
+                
+                for (var i =0;i < buttons.length; i++){
+                  if(i != x-1)
+                  buttons[i].style.opacity =  ( buttons[i].style.opacity ==  "0" ? "1" : "0");
+				}
+				check_win();
+            }
+			
+			function check_shoes(x) {
+                if (x == combination){
+					cs = 2;
+					}
+					fin++;
+                var buttons = document.getElementsByClassName("s");
+                
+                for (var i =0;i < buttons.length; i++){
+                  if(i != x-1)
+                  buttons[i].style.opacity =  ( buttons[i].style.opacity ==  "0" ? "1" : "0");
+				}
+				check_win();
+            }
+		</script>
+	
+	</body>
+	
+</html>

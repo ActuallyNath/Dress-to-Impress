@@ -1,0 +1,52 @@
+body
+{
+	background-color: #d7d8e7;
+	margin: 0;
+}
+
+@font-face
+{
+	font-family: TextFont;
+	src: url(../mmfiles/text.ttf);
+}
+
+.menu
+{
+	padding-left: 20vw;
+	padding-top: 3vw;
+}
+
+#titleframe
+{
+	height:45vw;
+	width: auto;
+	position: absolute;
+	padding-left: 2vw;
+}
+
+#title
+{
+	height: 20vw;
+	width: auto;
+	position: absolute;
+	padding-top: 6vw;
+	padding-left: 28vw;
+}
+
+#challenge
+{
+	height: auto;
+	width: 25vw;
+	position: absolute;
+	margin-top: 26vw;
+	margin-left: 30.5vw;
+}
+
+#htp
+{
+	height: auto;
+	width: 25vw;
+	position: absolute;
+	margin-top: 32vw;
+	margin-left: 31vw;
+}
